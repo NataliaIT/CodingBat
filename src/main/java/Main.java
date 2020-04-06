@@ -13,6 +13,7 @@ public class Main {
         System.out.println(WarmUp1.nearHundred(93));
         System.out.println(missingChar("kitten", 1));
         System.out.println(backAround("cat"));
+        System.out.println(WarmUp1.startHi("hi there"));
     }
 
 

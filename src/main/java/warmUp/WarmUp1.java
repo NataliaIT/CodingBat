@@ -53,8 +53,22 @@ backAround("Hello") → "oHelloo"
 backAround("a") → "aaa"
      */
     public static String backAround(String str) {
-        char lastLetter = str.charAt(str.length()-1);
+        char lastLetter = str.charAt(str.length() - 1);
         return lastLetter + str + lastLetter;
+    }
+
+    /*
+    Given a string, return true if the string starts with "hi" and false otherwise.
+
+
+startHi("hi there") → true
+startHi("hi") → true
+startHi("hello hi") → false
+     */
+
+    public static boolean startHi(String str) {
+        if (str.length() < 2) return false;
+        return str.substring(0, 2).equals("hi");
     }
 
 

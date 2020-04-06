@@ -13,7 +13,7 @@ class WarmUp1Test {
         int n = 93;
         boolean expectedValue = true;
         boolean returnedValue = WarmUp1.nearHundred(n);
-        assertEquals(expectedValue,returnedValue);
+        assertEquals(expectedValue, returnedValue);
     }
 
     @Test
@@ -22,7 +22,7 @@ class WarmUp1Test {
         int n = 90;
         boolean expectedValue = true;
         boolean returnedValue = WarmUp1.nearHundred(n);
-        assertEquals(expectedValue,returnedValue);
+        assertEquals(expectedValue, returnedValue);
     }
 
     @Test
@@ -30,16 +30,26 @@ class WarmUp1Test {
     void missingChar() {
         int n = 0;
         String str = "kitten";
-        String expectedValue="itten";
-        String returnedValue=WarmUp1.missingChar(str,n);
-        assertEquals(expectedValue,returnedValue);
-        }
+        String expectedValue = "itten";
+        String returnedValue = WarmUp1.missingChar(str, n);
+        assertEquals(expectedValue, returnedValue);
+    }
 
     @Test
+    @DisplayName("Hello -> oHelooo")
     void backAround() {
         String str = "Hello";
         String expectedValue = "oHelloo";
         String returnedValue = WarmUp1.backAround(str);
-        assertEquals(expectedValue,returnedValue);
+        assertEquals(expectedValue, returnedValue);
+    }
+
+    @Test
+    @DisplayName(" i -> false")
+    void startHi() {
+        String str = "i";
+        boolean expectedValue = false;
+        boolean returnedValue = WarmUp1.startHi(str);
+        assertEquals(expectedValue, returnedValue);
     }
 }
