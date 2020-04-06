@@ -2,6 +2,46 @@ package warmUp;
 
 public class WarmUp1 {
 
+
+    /*
+Given an int n, return the absolute difference
+between n and 21, except return double the absolute
+difference if n is over 21.
+
+
+diff21(19) → 2
+diff21(10) → 11
+diff21(21) → 0
+ */
+    public static int diff21(int n) {
+        int absoluteDifference = Math.abs(21 - n);
+        if (n > 21) {
+            return absoluteDifference * 2;
+        } else
+            return absoluteDifference;
+    }
+
+    /**
+     * The parameter weekday is true if it is a weekday,
+     * and the parameter vacation is true if we are on vacation.
+     * We sleep in if it is not a weekday or we're on vacation.
+     * Return true if we sleep in.
+     * sleepIn(false, false) → true
+     * sleepIn(true, false) → false
+     * sleepIn(false, true) → true
+     *
+     * @param weekday
+     * @param vacation
+     * @return
+     */
+    public static boolean sleepIn(boolean weekday, boolean vacation) {
+        if (!weekday || vacation) {
+            return true;
+        }
+        return false;
+    }
+
+
     /*
     Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) computes the absolute value of a number.
 
@@ -194,7 +234,7 @@ parrotTrouble(true, 7) → false
 parrotTrouble(false, 6) → false
      */
     public boolean parrotTrouble(boolean talking, int hour) {
-        return (hour<7 || hour>20) && talking;
+        return (hour < 7 || hour > 20) && talking;
     }
 
     /*
@@ -210,8 +250,8 @@ posNeg(-4, -5, true) → true
      */
 
     public boolean posNeg(int a, int b, boolean negative) {
-return (((a<0 && b>0) || (a>0 && b<0)) && !negative) ||
-        (a<0 && b<0 && negative);
+        return (((a < 0 && b > 0) || (a > 0 && b < 0)) && !negative) ||
+                (a < 0 && b < 0 && negative);
     }
 }
 

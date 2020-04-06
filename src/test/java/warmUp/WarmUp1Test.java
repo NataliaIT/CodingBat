@@ -8,6 +8,38 @@ import static org.junit.jupiter.api.Assertions.*;
 class WarmUp1Test {
 
     @Test
+    @DisplayName("for param 19 it returns 2")
+    void diff21() {
+        int n = 19;
+        int expectedValue = 2;
+        int returnValue = WarmUp1.diff21(n);
+        assertEquals(expectedValue, returnValue);
+    }
+
+    @Test
+    @DisplayName("for param 21 returns 0")
+    void testDiff21() {
+        int n = 21;
+        int expectedValue = 0;
+        int returnedValue = WarmUp1.diff21(n);
+        assertEquals(expectedValue, returnedValue);
+    }
+
+    @Test
+    @DisplayName("should return true if both parametres are false")
+    void sleepIn() {
+        //given
+        boolean weekDay = false;
+        boolean vacation = false;
+        boolean expectedValue = true;
+        //when
+        boolean returnedValue = WarmUp1.sleepIn(weekDay, vacation);
+        //then
+        assertEquals(expectedValue, returnedValue);
+
+    }
+
+    @Test
     @DisplayName("nearHundred(93) → true")
     void nearHundred() {
         int n = 93;
@@ -80,7 +112,7 @@ class WarmUp1Test {
         int a = 13;
         int b = 7;
         int expectedValue = 0;
-        int returnedValue = WarmUp1.close10(a,b);
+        int returnedValue = WarmUp1.close10(a, b);
         assertEquals(expectedValue, returnedValue);
     }
 
@@ -99,7 +131,7 @@ class WarmUp1Test {
         String str = "abcdefg";
         int n = 2;
         String expectedValue = "aceg";
-        String returnedValue = WarmUp1.everyNth(str,n);
-        assertEquals(expectedValue,returnedValue);
+        String returnedValue = WarmUp1.everyNth(str, n);
+        assertEquals(expectedValue, returnedValue);
     }
 }
