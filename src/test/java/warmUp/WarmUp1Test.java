@@ -63,4 +63,13 @@ class WarmUp1Test {
         boolean returnedValue = WarmUp1.hasTeen(a, b, c);
         assertEquals(expectedValue, returnedValue);
     }
+
+    @Test
+    @DisplayName("piz snacks → false")
+    void mixStart() {
+        String str = "piz snacks";
+        boolean expectedValue = false;
+        boolean returnedValue = WarmUp1.mixStart(str);
+        assertEquals(expectedValue, returnedValue);
+    }
 }

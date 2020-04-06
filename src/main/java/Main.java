@@ -15,6 +15,7 @@ public class Main {
         System.out.println(backAround("cat"));
         System.out.println(WarmUp1.startHi("hi there"));
         System.out.println(WarmUp1.hasTeen(13,20,10));
+        System.out.println(WarmUp1.mixStart("mix snacks"));
     }
 
 
