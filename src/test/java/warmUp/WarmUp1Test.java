@@ -24,4 +24,13 @@ class WarmUp1Test {
         boolean returnedValue = WarmUp1.nearHundred(n);
         assertEquals(expectedValue,returnedValue);
     }
+
+    @Test
+    @DisplayName("(kitten, 0) → itten")
+    void missingChar() {
+        int n = 0;
+        String str = "kitten";
+        String expectedValue="itten";
+        String returnedValue=WarmUp1.missingChar(str,n);
+        }
 }
