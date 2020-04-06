@@ -32,5 +32,14 @@ class WarmUp1Test {
         String str = "kitten";
         String expectedValue="itten";
         String returnedValue=WarmUp1.missingChar(str,n);
+        assertEquals(expectedValue,returnedValue);
         }
+
+    @Test
+    void backAround() {
+        String str = "Hello";
+        String expectedValue = "oHelloo";
+        String returnedValue = WarmUp1.backAround(str);
+        assertEquals(expectedValue,returnedValue);
+    }
 }
