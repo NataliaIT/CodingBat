@@ -14,6 +14,7 @@ public class Main {
         System.out.println(missingChar("kitten", 1));
         System.out.println(backAround("cat"));
         System.out.println(WarmUp1.startHi("hi there"));
+        System.out.println(WarmUp1.hasTeen(13,20,10));
     }
 
 

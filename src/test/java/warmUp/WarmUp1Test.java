@@ -52,4 +52,15 @@ class WarmUp1Test {
         boolean returnedValue = WarmUp1.startHi(str);
         assertEquals(expectedValue, returnedValue);
     }
+
+    @Test
+    @DisplayName("(20, 19, 10) → true")
+    void hasTeen() {
+        int a = 20;
+        int b = 19;
+        int c = 10;
+        boolean expectedValue = true;
+        boolean returnedValue = WarmUp1.hasTeen(a, b, c);
+        assertEquals(expectedValue, returnedValue);
+    }
 }
