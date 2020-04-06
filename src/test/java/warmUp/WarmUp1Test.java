@@ -92,4 +92,14 @@ class WarmUp1Test {
         boolean returnedValue = WarmUp1.stringE(str);
         assertEquals(expectedValue, returnedValue);
     }
+
+    @Test
+    @DisplayName("abcdefg, 2 → aceg")
+    void everyNth() {
+        String str = "abcdefg";
+        int n = 2;
+        String expectedValue = "aceg";
+        String returnedValue = WarmUp1.everyNth(str,n);
+        assertEquals(expectedValue,returnedValue);
+    }
 }

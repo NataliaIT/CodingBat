@@ -18,6 +18,7 @@ public class Main {
         System.out.println(WarmUp1.mixStart("mix snacks"));
         System.out.println(WarmUp1.close10(-8,-13));
         System.out.println(WarmUp1.stringE("Hello"));
+        System.out.println(WarmUp1.everyNth("Miracle", 2));
     }
 
 
