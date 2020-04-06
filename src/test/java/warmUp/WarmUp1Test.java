@@ -72,4 +72,15 @@ class WarmUp1Test {
         boolean returnedValue = WarmUp1.mixStart(str);
         assertEquals(expectedValue, returnedValue);
     }
+
+
+    @Test
+    @DisplayName("close10(13, 7) → 0")
+    void close10() {
+        int a = 13;
+        int b = 7;
+        int expectedValue = 0;
+        int returnedValue = WarmUp1.close10(a,b);
+        assertEquals(expectedValue, returnedValue);
+    }
 }
