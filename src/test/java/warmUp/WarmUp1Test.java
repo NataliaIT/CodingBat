@@ -83,4 +83,13 @@ class WarmUp1Test {
         int returnedValue = WarmUp1.close10(a,b);
         assertEquals(expectedValue, returnedValue);
     }
+
+    @Test
+    @DisplayName("Heelele → false")
+    void stringE() {
+        String str = "Heelele";
+        boolean expectedValue = false;
+        boolean returnedValue = WarmUp1.stringE(str);
+        assertEquals(expectedValue, returnedValue);
+    }
 }

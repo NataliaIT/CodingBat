@@ -99,7 +99,7 @@ Go...
      */
 
     public static boolean mixStart(String str) {
-        if (str.length()<3) return false;
+        if (str.length() < 3) return false;
         return str.substring(1, 3).equals("ix");
     }
 
@@ -116,11 +116,41 @@ close10(13, 7) → 0
      */
 
     public static int close10(int a, int b) {
-        if (Math.abs(10-a)<Math.abs(10-b))
+        if (Math.abs(10 - a) < Math.abs(10 - b))
             return a;
-        else if (Math.abs(10-a)>Math.abs(10-b))
+        else if (Math.abs(10 - a) > Math.abs(10 - b))
             return b;
         else return 0;
 
     }
+
+    /*
+
+Return true if the given string contains between 1 and 3 'e' chars.
+
+
+stringE("Hello") → true
+stringE("Heelle") → true
+stringE("Heelele") → false
+
+     */
+
+    public static boolean stringE(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.substring(i, i + 1).equals("e")) {
+                count++;
+            }
+        }
+        return count >= 1 && count <= 3;
+    }
+
+
 }
+
+
+
+
+
+
+
