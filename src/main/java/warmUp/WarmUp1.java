@@ -262,12 +262,12 @@ frontBack("ab") → "ba"
      */
 
     public String frontBack(String str) {
-        if (str.length() <2)
+        if (str.length() < 2)
             return str;
 
         char lastLetter = str.charAt(str.length() - 1);
-        char firstLetter=str.charAt(0);
-        String middleString = str.substring(1, str.length()-1 );
+        char firstLetter = str.charAt(0);
+        String middleString = str.substring(1, str.length() - 1);
         String newString = lastLetter + middleString + firstLetter;
         return newString;
     }
@@ -283,7 +283,20 @@ or35(8) → false
      */
 
     public boolean or35(int n) {
-return n%3==0 || n%5==0;
+        return n % 3 == 0 || n % 5 == 0;
+    }
+
+    /*Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+
+
+icyHot(120, -1) → true
+icyHot(-1, 120) → true
+icyHot(2, 120) → false
+
+     */
+
+    public boolean icyHot(int temp1, int temp2) {
+return (temp1<0 && temp2>100) || (temp2<0 && temp1>100);
     }
 
 }
