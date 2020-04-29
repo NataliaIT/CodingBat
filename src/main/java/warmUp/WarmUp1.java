@@ -253,6 +253,24 @@ posNeg(-4, -5, true) → true
         return (((a < 0 && b > 0) || (a > 0 && b < 0)) && !negative) ||
                 (a < 0 && b < 0 && negative);
     }
+
+    /*
+    Given a string, return a new string where the first and last chars have been exchanged.
+frontBack("code") → "eodc"
+frontBack("a") → "a"
+frontBack("ab") → "ba"
+     */
+
+    public String frontBack(String str) {
+        if (str.length() <2)
+            return str;
+
+        char lastLetter = str.charAt(str.length() - 1);
+        char firstLetter=str.charAt(0);
+        String middleString = str.substring(1, str.length()-1 );
+        String newString = lastLetter + middleString + firstLetter;
+        return newString;
+    }
 }
 
 
