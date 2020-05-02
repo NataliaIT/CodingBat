@@ -326,8 +326,11 @@ startOz("oxx") → "o"
 
 
     public String startOz(String str) {
-        if (str.length() < 2) return str;
         String newString = "";
+        if (str.length() == 0 ) return newString;
+        if (str.length() == 1  && str.substring(0, 1).equals("o")) return str;
+        if (str.length() <2 ) return newString;
+
         if (str.substring(0, 1).equals("o"))
             newString = str.substring(0, 1);
 
@@ -341,7 +344,6 @@ startOz("oxx") → "o"
         return newString;
 
     }
-
 
 }
 
