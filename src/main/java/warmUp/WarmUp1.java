@@ -482,43 +482,11 @@ delDel("adedbc") → "adedbc"
 
     public String delDel(String str) {
         if (str.length() > 3 && str.substring(1, 4).equals("del")) {
-            return str.substring(0,1) + str.substring(4);
+            return str.substring(0, 1) + str.substring(4);
 
         }
         return str;
     }
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /*
     Given three int values, a b c, return the largest.
@@ -551,7 +519,6 @@ in3050(40, 50) → true
                 (a >= 40 && a <= 50 && b >= 40 && b <= 50);
     }
 
-
     /*
 
 Given 2 positive int values, return the larger value that is in the range 10..20 inclusive,
@@ -571,15 +538,21 @@ max1020(11, 9) → 11
         else return 0;
     }
 
-    //Solution 2
-//    public int max1020SecondSolution(int a, int b) {
-//        if (a >= 10 && a <= 20) {
-//            if ((a > b) || ((b > 20 || b < 10) && b > a)) return a;
-//        }
-//        if (b >= 10 && b <= 20) {
-//            if ((b > a) || (a > 20 || a < 10) && a > b) return b;
-//        } else return 0;
-//    }
+    /*
+    Given a string, return a new string where the last 3 chars are now in upper case.
+    If the string has less than 3 chars, uppercase whatever is there.
+    Note that str.toUpperCase() returns the uppercase version of a string.
+
+
+    endUp("Hello") → "HeLLO"
+    endUp("hi there") → "hi thERE"
+    endUp("hi") → "HI"
+     */
+    public String endUp(String str) {
+        if (str.length() <= 3) return str.toUpperCase();
+        return str.substring(0, str.length() -3) +
+                str.substring(str.length() - 3).toUpperCase();
+    }
 
 
 }
