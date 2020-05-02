@@ -373,7 +373,22 @@ lastDigit(6, 17) → false
 lastDigit(3, 113) → true
      */
     public boolean lastDigit(int a, int b) {
-return (a%10 == b%10);
+        return (a % 10 == b % 10);
+    }
+
+    /*
+
+Given two int values, return their sum. Unless the two values are the same, then return double their sum.
+
+
+sumDouble(1, 2) → 3
+sumDouble(3, 2) → 5
+sumDouble(2, 2) → 8
+     */
+
+    public int sumDouble(int a, int b) {
+        if (a == b) return 2 * (a + b);
+        return a + b;
     }
 
 
@@ -457,12 +472,11 @@ max1020(11, 9) → 11
     //Solution 2
     public int max1020SecondSolution(int a, int b) {
         if (a >= 10 && a <= 20) {
-            if ((a > b) ||((b > 20 || b < 10) && b > a)) return a;
+            if ((a > b) || ((b > 20 || b < 10) && b > a)) return a;
         }
         if (b >= 10 && b <= 20) {
-            if ((b > a) ||(a > 20 || a < 10) && a > b)return b;
-        }
-        else return 0;
+            if ((b > a) || (a > 20 || a < 10) && a > b) return b;
+        } else return 0;
     }
 
 
