@@ -434,7 +434,10 @@ front3("abc") → "abcabcabc"
      */
 
     public String front3(String str) {
-
+        String newString = "";
+        if (str.length() < 3) newString = str;
+        else newString = str.substring(0, 3);
+        return newString + newString + newString;
     }
 
 
