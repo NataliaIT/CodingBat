@@ -324,12 +324,12 @@ startOz("bzoo") → "z"
 startOz("oxx") → "o"
      */
 
-//Solution1
+    //Solution1
     public String startOz(String str) {
         String newString = "";
-        if (str.length() == 0 ) return newString;
-        if (str.length() == 1  && str.substring(0, 1).equals("o")) return str;
-        if (str.length() <2 ) return newString;
+        if (str.length() == 0) return newString;
+        if (str.length() == 1 && str.substring(0, 1).equals("o")) return str;
+        if (str.length() < 2) return newString;
 
         if (str.substring(0, 1).equals("o"))
             newString = str.substring(0, 1);
@@ -350,12 +350,12 @@ startOz("oxx") → "o"
     public String startOz2(String str) {
         String newString = "";
 
-        if (str.length() >= 1 && str.charAt(0)=='o') {
-            newString = str.substring(0,1);
+        if (str.length() >= 1 && str.charAt(0) == 'o') {
+            newString = str.substring(0, 1);
         }
 
-        if (str.length() >= 2 && str.charAt(1)=='z') {
-            newString += str.substring(1,2);
+        if (str.length() >= 2 && str.charAt(1) == 'z') {
+            newString += str.substring(1, 2);
         }
 
         return newString;
@@ -373,7 +373,23 @@ intMax(3, 2, 1) → 3
 
 
     public int intMax(int a, int b, int c) {
-        return Math.max(Math.max(a,b), Math.max(b,c));
+        return Math.max(Math.max(a, b), Math.max(b, c));
+    }
+
+    /*
+    Given 2 int values, return whichever value is nearest to the value 10,
+    or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
+
+
+close10(8, 13) → 8
+close10(13, 8) → 8
+close10(13, 7) → 0
+     */
+
+    public int close10(int a, int b) {
+        if (Math.abs(a - 10) < Math.abs(b - 10)) return a;
+        if (Math.abs(a - 10) == Math.abs(b - 10)) return 0;
+        else return b;
     }
 
 }
