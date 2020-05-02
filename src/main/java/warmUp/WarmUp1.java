@@ -324,7 +324,7 @@ startOz("bzoo") → "z"
 startOz("oxx") → "o"
      */
 
-
+//Solution1
     public String startOz(String str) {
         String newString = "";
         if (str.length() == 0 ) return newString;
@@ -341,6 +341,23 @@ startOz("oxx") → "o"
         if (str.substring(0, 2).equals("oz")) {
             newString = str.substring(0, 2);
         }
+        return newString;
+
+    }
+
+    //Solution 2
+
+    public String startOz2(String str) {
+        String newString = "";
+
+        if (str.length() >= 1 && str.charAt(0)=='o') {
+            newString = str.substring(0,1);
+        }
+
+        if (str.length() >= 2 && str.charAt(1)=='z') {
+            newString += str.substring(1,2);
+        }
+
         return newString;
 
     }
