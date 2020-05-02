@@ -164,6 +164,7 @@ close10(13, 7) → 0
 
     }
 
+
     /*
 
 Return true if the given string contains between 1 and 3 'e' chars.
@@ -347,7 +348,7 @@ startOz("oxx") → "o"
 
     //Solution 2
 
-    public String startOz2(String str) {
+    public String startOzSecondSolution(String str) {
         String newString = "";
 
         if (str.length() >= 1 && str.charAt(0) == 'o') {
@@ -363,6 +364,46 @@ startOz("oxx") → "o"
     }
 
     /*
+    Given two non-negative int values, return true if they have the same last digit,
+    such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+
+
+lastDigit(7, 17) → true
+lastDigit(6, 17) → false
+lastDigit(3, 113) → true
+     */
+    public boolean lastDigit(int a, int b) {
+return (a%10 == b%10);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     Given three int values, a b c, return the largest.
 
 
@@ -375,23 +416,6 @@ intMax(3, 2, 1) → 3
     public int intMax(int a, int b, int c) {
         return Math.max(Math.max(a, b), Math.max(b, c));
     }
-
-    /*
-    Given 2 int values, return whichever value is nearest to the value 10,
-    or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
-
-
-close10(8, 13) → 8
-close10(13, 8) → 8
-close10(13, 7) → 0
-     */
-
-    public int close10(int a, int b) {
-        if (Math.abs(a - 10) < Math.abs(b - 10)) return a;
-        if (Math.abs(a - 10) == Math.abs(b - 10)) return 0;
-        else return b;
-    }
-
 
     /*
 
@@ -409,6 +433,38 @@ in3050(40, 50) → true
         return (a >= 30 && a <= 40 && b >= 30 && b <= 40) ||
                 (a >= 40 && a <= 50 && b >= 40 && b <= 50);
     }
+
+
+    /*
+
+Given 2 positive int values, return the larger value that is in the range 10..20 inclusive,
+ or return 0 if neither is in that range.
+
+
+max1020(11, 19) → 19
+max1020(19, 11) → 19
+max1020(11, 9) → 11
+     */
+//Solution 1
+    public int max1020(int a, int b) {
+        if (a >= 10 && a <= 20 && a > b) return a;
+        if (b >= 10 && b <= 20 && b > a) return b;
+        if (a >= 10 && a <= 20 && (b > 20 || b < 10) && b > a) return a;
+        if (b >= 10 && b <= 20 && (a > 20 || a < 10) && a > b) return b;
+        else return 0;
+    }
+
+    //Solution 2
+    public int max1020SecondSolution(int a, int b) {
+        if (a >= 10 && a <= 20) {
+            if ((a > b) ||((b > 20 || b < 10) && b > a)) return a;
+        }
+        if (b >= 10 && b <= 20) {
+            if ((b > a) ||(a > 20 || a < 10) && a > b)return b;
+        }
+        else return 0;
+    }
+
 
 }
 
