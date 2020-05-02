@@ -296,8 +296,52 @@ icyHot(2, 120) → false
      */
 
     public boolean icyHot(int temp1, int temp2) {
-return (temp1<0 && temp2>100) || (temp2<0 && temp1>100);
+        return (temp1 < 0 && temp2 > 100) || (temp2 < 0 && temp1 > 100);
     }
+/*
+
+We'll say that a number is "teen" if it is in the range 13..19 inclusive.
+Given 2 int values, return true if one or the other is teen, but not both.
+
+
+loneTeen(13, 99) → true
+loneTeen(21, 19) → true
+loneTeen(13, 13) → false
+ */
+
+    public boolean loneTeen(int a, int b) {
+        return (a >= 13 && a <= 19 && (b < 13 || b > 19)) ||
+                (b >= 13 && b <= 19 && (a < 13 || a > 19));
+    }
+
+    /*
+Given a string, return a string made of the first 2 chars (if present),
+however include first char only if it is 'o' and include the second only
+if it is 'z', so "ozymandias" yields "oz".
+
+startOz("ozymandias") → "oz"
+startOz("bzoo") → "z"
+startOz("oxx") → "o"
+     */
+
+
+    public String startOz(String str) {
+        if (str.length() < 2) return str;
+        String newString = "";
+        if (str.substring(0, 1).equals("o"))
+            newString = str.substring(0, 1);
+
+        if (str.substring(1, 2).equals("z")) {
+            newString = str.substring(1, 2);
+        }
+
+        if (str.substring(0, 2).equals("oz")) {
+            newString = str.substring(0, 2);
+        }
+        return newString;
+
+    }
+
 
 }
 
