@@ -391,6 +391,52 @@ sumDouble(2, 2) → 8
         return a + b;
     }
 
+    /*
+
+Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
+
+
+makes10(9, 10) → true
+makes10(9, 9) → false
+makes10(1, 9) → true
+     */
+
+    public boolean makes10(int a, int b) {
+        return a == 10 || b == 10 || ((a + b) == 10);
+    }
+
+    /*
+    Given a string, return a new string where "not " has been added to the front.
+    However, if the string already begins with "not", return the string unchanged. Note: use .equals() to compare 2 strings.
+
+
+notString("candy") → "not candy"
+notString("x") → "not x"
+notString("not bad") → "not bad"
+     */
+
+    public String notString(String str) {
+
+        if (str.length() > 2 && str.substring(0, 3).equals("not"))
+            return str;
+        else return "not " + str;
+    }
+
+    /*
+    Given a string, we'll say that the front is the first 3 chars of the string.
+    If the string length is less than 3, the front is whatever is there.
+    Return a new string which is 3 copies of the front.
+
+
+front3("Java") → "JavJavJav"
+front3("Chocolate") → "ChoChoCho"
+front3("abc") → "abcabcabc"
+     */
+
+    public String front3(String str) {
+
+    }
+
 
 
 
@@ -470,14 +516,14 @@ max1020(11, 9) → 11
     }
 
     //Solution 2
-    public int max1020SecondSolution(int a, int b) {
-        if (a >= 10 && a <= 20) {
-            if ((a > b) || ((b > 20 || b < 10) && b > a)) return a;
-        }
-        if (b >= 10 && b <= 20) {
-            if ((b > a) || (a > 20 || a < 10) && a > b) return b;
-        } else return 0;
-    }
+//    public int max1020SecondSolution(int a, int b) {
+//        if (a >= 10 && a <= 20) {
+//            if ((a > b) || ((b > 20 || b < 10) && b > a)) return a;
+//        }
+//        if (b >= 10 && b <= 20) {
+//            if ((b > a) || (a > 20 || a < 10) && a > b) return b;
+//        } else return 0;
+//    }
 
 
 }
