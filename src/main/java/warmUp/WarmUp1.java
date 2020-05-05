@@ -529,7 +529,7 @@ max1020(11, 19) → 19
 max1020(19, 11) → 19
 max1020(11, 9) → 11
      */
-//Solution 1
+
     public int max1020(int a, int b) {
         if (a >= 10 && a <= 20 && a > b) return a;
         if (b >= 10 && b <= 20 && b > a) return b;
