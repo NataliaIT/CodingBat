@@ -58,8 +58,23 @@ last2("xaxxaxaxx") → 1
 last2("axxxaaxx") → 2
      */
     public int last2(String str) {
+        if (str.length() < 2) return 0;
+
+        int howManyTimes = 0;
+
+        String lastTwo = str.substring(str.length() - 2);
+
+        int stringLenghtMinus2 = str.length() - 2;
+
+        for (int i = 0; i < stringLenghtMinus2; i++) {
+            if (str.substring(i, i + 2).equals(lastTwo)) {
+                howManyTimes++;
+            }
+        }
+        return howManyTimes;
+
 
     }
 }
 
-}
+
