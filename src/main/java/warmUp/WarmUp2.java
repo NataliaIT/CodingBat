@@ -137,8 +137,8 @@ noTriples([1, 1, 1, 2, 2, 2, 1]) → false
 
     public boolean noTriples(int[] nums) {
 
-        for (int i =0; i< nums.length-2; i++){
-            if (nums[i] ==nums[i+1] && nums[i+2]== nums[i]){
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] == nums[i + 1] && nums[i + 2] == nums[i]) {
                 return false;
             }
         }
@@ -157,14 +157,32 @@ frontTimes("Abc", 3) → "AbcAbcAbc"
  */
 
     public String frontTimes(String str, int n) {
-        String front ="";
-        if (str.length()<3){
+        String front = "";
+        if (str.length() < 3) {
             front = str;
+        } else front = str.substring(0, 3);
+        String resultStr = "";
+        for (int i = 0; i < n; i++) {
+            resultStr += front;
         }
-        else front= str.substring(0,3);
-        String resultStr ="";
-        for (int i = 0; i<n ; i++){
-            resultStr+=front;
+        return resultStr;
+    }
+
+
+    /*
+
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+
+stringBits("Hello") → "Hlo"
+stringBits("Hi") → "H"
+stringBits("Heeololeo") → "Hello"
+     */
+
+    public String stringBits(String str) {
+        String resultStr = "";
+        for (int i = 0; i < str.length(); i += 2) {
+            resultStr += str.charAt(i);
         }
         return resultStr;
     }
