@@ -12,7 +12,7 @@ helloName("Alice") → "Hello Alice!"
 helloName("X") → "Hello X!"
      */
     public String helloName(String name) {
-return "Hello " + name +"!";
+        return "Hello " + name + "!";
     }
 
     /*
@@ -28,9 +28,23 @@ makeOutWord("<<>>", "WooHoo") → "<<WooHoo>>"
 makeOutWord("[[]]", "word") → "[[word]]"
      */
     public String makeOutWord(String out, String word) {
-        String start = out.substring(0,2);
+        String start = out.substring(0, 2);
         String end = out.substring(2);
-        return start+word+end;
+        return start + word + end;
+    }
+
+    /*
+    Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+
+
+firstHalf("WooHoo") → "Woo"
+firstHalf("HelloThere") → "Hello"
+firstHalf("abcdef") → "abc"
+     */
+
+    public String firstHalf(String str) {
+        int newLength = str.length() / 2;
+        return str.substring(0, newLength);
     }
 
 }
