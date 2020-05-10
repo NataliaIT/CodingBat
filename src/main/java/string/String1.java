@@ -107,4 +107,20 @@ endsLy("oddy") → false
         return str.substring(str.length() - 2).equals("ly");
     }
 
+    /*
+    Given a string of odd length, return the string length 3 from its middle,
+    so "Candy" yields "and". The string length will be at least 3.
+
+
+middleThree("Candy") → "and"
+middleThree("and") → "and"
+middleThree("solving") → "lvi"
+     */
+
+    public String middleThree(String str) {
+        int midLetterNo = str.length() / 2;
+        String middleStr = str.substring(midLetterNo - 1, midLetterNo + 2);
+        return middleStr;
+    }
+
 }
