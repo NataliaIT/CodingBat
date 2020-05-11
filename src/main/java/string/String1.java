@@ -329,8 +329,32 @@ hasBad("xxbadxx") → false
         if (str.length() < 3) return false;
         if (str.equals("bad")) return true;
         if (str.length() == 3) return false;
-        return str.substring(0,3).equals("bad") || str.substring(1,4).equals("bad");
+        return str.substring(0, 3).equals("bad") || str.substring(1, 4).equals("bad");
     }
+
+    /*
+    Given two strings, append them together (known as "concatenation")
+    and return the result. However, if the concatenation creates a double-char,
+    then omit one of the chars, so "abc" and "cat" yields "abcat".
+
+
+conCat("abc", "cat") → "abcat"
+conCat("dog", "cat") → "dogcat"
+conCat("abc", "") → "abc"
+     */
+
+
+    public String conCat(String a, String b) {
+        String resultStr = "";
+        if(a.length()<1) return b;
+        if (b.length()<1) return a;
+        if (a.charAt(a.length() - 1) == b.charAt(0)) {
+            resultStr = a.substring(0, a.length() - 1) + b;
+        } else resultStr = a + b;
+        return resultStr;
+    }
+
+
 
 
 }
