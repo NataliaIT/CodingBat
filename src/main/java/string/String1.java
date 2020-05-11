@@ -235,7 +235,7 @@ makeAbba("What", "Up") → "WhatUpUpWhat"
 
 
     public String makeAbba(String a, String b) {
-return a+b+b+a;
+        return a + b + b + a;
     }
 
 /*
@@ -250,8 +250,8 @@ extraEnd("Hi") → "HiHiHi"
 
 
     public String extraEnd(String str) {
-        String end = str.substring(str.length()-2);
-        return end+end+end;
+        String end = str.substring(str.length() - 2);
+        return end + end + end;
     }
 
     /*
@@ -265,7 +265,7 @@ withoutEnd("coding") → "odin"
      */
 
     public String withoutEnd(String str) {
-        return str.substring(1,str.length()-1);
+        return str.substring(1, str.length() - 1);
     }
 
     /*
@@ -281,7 +281,26 @@ left2("Hi") → "Hi"
 
     public String left2(String str) {
 
-        return str.substring(2,str.length()) + str.substring(0,2);
+        return str.substring(2, str.length()) + str.substring(0, 2);
     }
+
+    /*
+    Given a string, return a version without both the first and
+    last char of the string. The string may be any length, including 0.
+
+
+withouEnd2("Hello") → "ell"
+withouEnd2("abc") → "b"
+withouEnd2("ab") → ""
+     */
+
+    public String withouEnd2(String str) {
+        String resultStr = "";
+        if (str.length() > 2) {
+            resultStr = str.substring(1, str.length() - 1);
+        }
+        return resultStr;
+    }
+
 
 }
