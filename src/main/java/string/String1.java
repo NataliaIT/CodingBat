@@ -346,15 +346,28 @@ conCat("abc", "") → "abc"
 
     public String conCat(String a, String b) {
         String resultStr = "";
-        if(a.length()<1) return b;
-        if (b.length()<1) return a;
+        if (a.length() < 1) return b;
+        if (b.length() < 1) return a;
         if (a.charAt(a.length() - 1) == b.charAt(0)) {
             resultStr = a.substring(0, a.length() - 1) + b;
         } else resultStr = a + b;
         return resultStr;
     }
 
+    /*
+    Given a string, return true if the first 2 chars in the string
+    also appear at the end of the string, such as with "edited".
 
+
+frontAgain("edited") → true
+frontAgain("edit") → false
+frontAgain("ed") → true
+     */
+
+    public boolean frontAgain(String str) {
+        if (str.length() < 2) return false;
+        return str.substring(0, 2).equals(str.substring(str.length() - 2));
+    }
 
 
 }
