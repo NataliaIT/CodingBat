@@ -383,7 +383,13 @@ frontAgain("ed") → true
     */
 
     public String without2(String str) {
+        String newStr = "";
+        if (str.length() < 2) return str;
+        if (str.startsWith(str.substring(str.length() - 2))) {
+            newStr = str.substring(2);
+        } else newStr = str;
 
+        return newStr;
     }
 
 
