@@ -382,14 +382,17 @@ frontAgain("ed") → true
 
     */
 
-    public String without2(String str) {
-        String newStr = "";
-        if (str.length() < 2) return str;
-        if (str.startsWith(str.substring(str.length() - 2))) {
-            newStr = str.substring(2);
-        } else newStr = str;
+    public String withoutX(String str) {
+        int start = 0;
+        int end = str.length();
 
-        return newStr;
+        if (end > 0 && str.charAt(0) == 'x')
+            ++start;
+
+        if (end > 1 && str.charAt(end - 1) == 'x')
+            end--;
+
+        return str.substring(start, end);
     }
 
 
@@ -405,9 +408,10 @@ withoutX("Hxix") → "Hxi"
      */
 
     public String withoutX(String str) {
-
+        if (str.charAt(0) == 'x') return str.substring(1);
+        if (str.charAt(str.length()) == 'x') return str.substring(0, str.length() - 1);
+        return str;
     }
-
 
 
 }
