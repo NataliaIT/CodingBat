@@ -480,11 +480,24 @@ right2("Hi") → "Hi"
      */
 
     public String right2(String str) {
-        return str.substring(str.length()-2)+str.substring(0,str.length()-2);
+        return str.substring(str.length() - 2) + str.substring(0, str.length() - 2);
     }
 
 
+    /*
+    Given a string of even length, return a string made of the middle two chars,
+    so the string "string" yields "ri". The string length will be at least 2.
 
+
+middleTwo("string") → "ri"
+middleTwo("code") → "od"
+middleTwo("Practice") → "ct"
+     */
+
+    public String middleTwo(String str) {
+        int middleLetter = str.length() / 2;
+        return str.substring(middleLetter - 1, middleLetter + 1);
+    }
 
 
 }
