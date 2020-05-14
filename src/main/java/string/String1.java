@@ -413,21 +413,21 @@ withoutX("Hxix") → "Hxi"
         return str;
     }
 
-/*
-    The web is built with HTML strings like "<i>Yay</i>"
-    which draws Yay as italic text.
-    In this example, the "i" tag makes <i> and </i>
-    which surround the word "Yay". Given tag and word strings,
-    create the javax.swing.text.html.HTML string with tags around the word, e.g. "<i>Yay</i>".
+    /*
+        The web is built with HTML strings like "<i>Yay</i>"
+        which draws Yay as italic text.
+        In this example, the "i" tag makes <i> and </i>
+        which surround the word "Yay". Given tag and word strings,
+        create the javax.swing.text.html.HTML string with tags around the word, e.g. "<i>Yay</i>".
 
 
-    makeTags("i", "Yay") → "<i>Yay</i>"
-    makeTags("i", "Hello") → "<i>Hello</i>"
-    makeTags("cite", "Yay") → "<cite>Yay</cite>"
-    */
-public String makeTags(String tag, String word) {
-    return "<" + tag + ">" + word + "</" + tag + ">";
-}
+        makeTags("i", "Yay") → "<i>Yay</i>"
+        makeTags("i", "Hello") → "<i>Hello</i>"
+        makeTags("cite", "Yay") → "<cite>Yay</cite>"
+        */
+    public String makeTags(String tag, String word) {
+        return "<" + tag + ">" + word + "</" + tag + ">";
+    }
 
 /*
 Given a string, return the string made of its first two chars, so the String "Hello" yields "He". If the string is shorter than length 2, return whatever there is, so "X" yields "X", and the empty string "" yields the empty string "". Note that str.length() returns the length of a string.
@@ -437,6 +437,15 @@ firstTwo("Hello") → "He"
 firstTwo("abcdefg") → "ab"
 firstTwo("ab") → "ab"
  */
+
+
+    public String firstTwo(String str) {
+        String front = "";
+        if (str.length() < 2) {
+            front = str;
+        } else front = str.substring(0, 2);
+        return front;
+    }
 
 
 }
