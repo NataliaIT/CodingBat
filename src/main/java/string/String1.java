@@ -535,7 +535,23 @@ atFirst("h") → "h@"
             return str.charAt(0) + "@";
         return str.substring(0, 2);
     }
+/*
+Given a string of any length, return a new string where the last 2 chars,
+if present, are swapped, so "coding" yields "codign".
 
+
+lastTwo("coding") → "codign"
+lastTwo("cat") → "cta"
+lastTwo("ab") → "ba"
+ */
+
+    public String lastTwo(String str) {
+        int last=str.length();
+        if(last>1){
+            str = str.substring(0,last-2) + str.charAt(last-1) +str.charAt(last-2);
+        }
+        return str;
+    }
 
 }
 
