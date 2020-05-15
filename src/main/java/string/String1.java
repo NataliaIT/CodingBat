@@ -576,7 +576,33 @@ minCat("java", "Hello") → "javaello"
         return a + b;
     }
 
+    /*
 
-}
+Given a string, return a version without the first 2 chars.
+Except keep the first char if it is 'a' and keep the second char if it is 'b'.
+The string may be any length. Harder than it looks.
+
+
+deFront("Hello") → "llo"
+deFront("java") → "va"
+deFront("away") → "aay"
+     */
+
+    public String deFront(String str) {
+        if (str.length() == 1 && str.charAt(0) != 'a')
+            str = "";
+
+        if (str.length() >= 2) {
+            if (str.charAt(0) != 'a' && str.charAt(1) != 'b') {
+                str = str.substring(2);
+            } else if (str.charAt(0) != 'a') {
+                str = str.substring(1);
+            } else if (str.charAt(1) != 'b') {
+                str = "a" + str.substring(2);
+            }
+        }
+
+        return str;
+    }
 
 
