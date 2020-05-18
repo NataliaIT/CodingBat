@@ -62,7 +62,29 @@ middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 
 
     public int[] middleWay(int[] a, int[] b) {
-int[] result = new int[] {a[1],b[1]};
-return result;
+        int[] result = new int[]{a[1], b[1]};
+        return result;
     }
+
+
+    /*
+    Given an int array length 2, return true if it does not contain a 2 or 3.
+
+
+no23([4, 5]) → true
+no23([4, 2]) → false
+no23([3, 5]) → false
+     */
+
+
+    public boolean no23(int[] nums) {
+
+        for (int n : nums) {
+            if (n == 2 || n == 3)
+                return false;
+        }
+        return true;
+    }
+
+
 }
