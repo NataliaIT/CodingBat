@@ -156,13 +156,13 @@ unlucky1([2, 1, 3, 4, 5]) → true
 unlucky1([1, 1, 1]) → false
      */
     public boolean unlucky1(int[] nums) {
-        if(nums.length>1){
-            for(int i =0; i<2; i++){
-                if (nums[i] ==1 && nums[i+1]==3){
+        if (nums.length > 1) {
+            for (int i = 0; i < 2; i++) {
+                if (nums[i] == 1 && nums[i + 1] == 3) {
                     return true;
                 }
             }
-            if((nums[nums.length-2] == 1) && (nums[nums.length -1]==3))
+            if ((nums[nums.length - 2] == 1) && (nums[nums.length - 1] == 3))
                 return true;
         }
         return false;
@@ -181,8 +181,22 @@ sameFirstLast([1, 2, 1]) → true
      */
 
     public boolean sameFirstLast(int[] nums) {
-return nums.length>0 && nums[0]==nums[nums.length-1];
+        return nums.length > 0 && nums[0] == nums[nums.length - 1];
     }
 
+
+    /*
+
+Given an array of ints length 3, return the sum of all the elements.
+
+
+sum3([1, 2, 3]) → 6
+sum3([5, 11, 2]) → 18
+sum3([7, 0, 0]) → 7
+     */
+
+    public int sum3(int[] nums) {
+        return nums[0] + nums[1] + nums[2];
+    }
 
 }
