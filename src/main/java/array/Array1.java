@@ -98,12 +98,32 @@ fix23([1, 2, 1]) → [1, 2, 1]
      */
 
     public int[] fix23(int[] nums) {
-        for (int i = 0; i < nums.length-1; i++) {
-            if(nums[i] == 2 && nums[i+1]==3){
-                nums[i+1]=0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 2 && nums[i + 1] == 3) {
+                nums[i + 1] = 0;
             }
         }
         return nums;
+    }
+
+
+    /*
+
+Given an array of ints of even length, return a new array length 2
+containing the middle two elements from the original array.
+The original array will be length 2 or more.
+
+
+makeMiddle([1, 2, 3, 4]) → [2, 3]
+makeMiddle([7, 1, 2, 3, 4, 9]) → [2, 3]
+makeMiddle([1, 2]) → [1, 2]
+     */
+
+    public int[] makeMiddle(int[] nums) {
+        int[] resultNums = new int[2];
+        resultNums[0] = nums[(nums.length / 2) - 1];
+        resultNums[1] = nums[(nums.length / 2)];
+        return resultNums;
     }
 
 
