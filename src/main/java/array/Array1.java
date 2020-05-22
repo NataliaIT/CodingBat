@@ -349,4 +349,26 @@ make2([], [1, 2]) → [1, 2]
         return resultArray;
     }
 
+    public int[] make2SecondSolution(int[] a, int[] b) {
+        int[] resultArray = new int[2];
+        int count = 0;
+        int i;
+
+        i = 0;
+
+        while (count < 2 && i < a.length) {
+            resultArray[count] = a[i];
+            count++;
+            i++;
+        }
+
+        i = 0;
+        while (count < 2 && i< b.length) {
+            resultArray[count] = b[i];
+            count++;
+            i++;
+        }
+        return resultArray;
+    }
+
 }
