@@ -467,4 +467,45 @@ biggerTwo([1, 1], [1, 2]) → [1, 2]
         }
         return sumA < sumB ? b : a;
     }
+
+    /*
+Given an array of ints, swap the first and last elements in the array.
+Return the modified array. The array length will be at least 1.
+
+swapEnds([1, 2, 3, 4]) → [4, 2, 3, 1]
+swapEnds([1, 2, 3]) → [3, 2, 1]
+swapEnds([8, 6, 7, 9, 5]) → [5, 6, 7, 9, 8]
+     */
+
+    public int[] swapEnds(int[] nums) {
+        int temp = nums[0];
+        nums[0] = nums[nums.length - 1];
+        nums[nums.length - 1] = temp;
+        return nums;
+    }
+
+    /*
+Given an int array of any length, return a new array of its first 2 elements.
+If the array is smaller than length 2, use whatever elements are present.
+
+frontPiece([1, 2, 3]) → [1, 2]
+frontPiece([1, 2]) → [1, 2]
+frontPiece([1]) → [1]
+*/
+    public int[] frontPiece(int[] nums) {
+        int[] front;
+
+        if (nums.length <= 1) {
+            front = new int[nums.length];
+            front = nums;
+        } else {
+            front = new int[2];
+        }
+        if (nums.length > 1) {
+
+            front[0] = nums[0];
+            front[1] = nums[1];
+        }
+        return front;
+    }
 }
