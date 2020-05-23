@@ -1,6 +1,7 @@
 package functional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Functional1 {
 /*
@@ -25,5 +26,12 @@ copies3(["a", "bb", "ccc"]) → ["aaa", "bbbbbb", "ccccccccc"]
 copies3(["24", "a", ""]) → ["242424", "aaa", ""]
 copies3(["hello", "there"]) → ["hellohellohello", "theretherethere"]
      */
+
+    public List<String> copies3(List<String> strings) {
+        return strings.stream()
+                .map(n -> n + n + n)
+                .collect(Collectors.toList());
+    }
+
 
 }
