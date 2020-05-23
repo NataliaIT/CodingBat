@@ -522,15 +522,11 @@ front11([1, 7], []) → [1]
     public int[] front11(int[] a, int[] b) {
         int[] front11;
         if (a.length > 0 && b.length > 0) {
-            front11 = new int[2];
-            front11[0] = a[0];
-            front11[1] = b[0];
+            front11 = new int[] {a[0],b[0]};
         } else if (a.length > b.length) {
-            front11 = new int[1];
-            front11[0] = a[0];
+            front11 = new int[] {a[0]};
         } else if (a.length < b.length) {
-            front11 = new int[1];
-            front11[0] = b[0];
+            front11 = new int[]{b[0]};
         } else {
             front11 = new int[0];
         }

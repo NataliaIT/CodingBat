@@ -407,7 +407,7 @@ withoutX("xHi") → "Hi"
 withoutX("Hxix") → "Hxi"
      */
 
-    public String withoutX(String str) {
+    public String withoutX2(String str) {
         if (str.charAt(0) == 'x') return str.substring(1);
         if (str.charAt(str.length()) == 'x') return str.substring(0, str.length() - 1);
         return str;
@@ -617,7 +617,7 @@ withoutX2("Hi") → "Hi"
      */
 
 
-    public String withoutX2(String str) {
+    public String withoutLetterX(String str) {
         if (str.length() == 0) return "";
         if (str.length() == 1 && str.charAt(0) == 'x') {
             return "";
