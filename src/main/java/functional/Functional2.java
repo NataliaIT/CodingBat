@@ -88,8 +88,43 @@ omitting any of the resulting numbers that end in 2.
 
     */
 public List<Integer> two2(List<Integer> nums) {
-    return nums.stream().map(n->n*2).filter(n->!(n%10==2)).collect(Collectors.toList());
+    return nums.stream()
+            .map(n->n*2)
+            .filter(n->!(n%10==2))
+            .collect(Collectors.toList());
 }
+
+/*
+Given a list of integers, return a list of those numbers, omitting any that are between 13 and 19 inclusive.
+
+
+noTeen([12, 13, 19, 20]) → [12, 20]
+noTeen([1, 14, 1]) → [1, 1]
+noTeen([15]) → []
+ */
+
+    public List<Integer> noTeen(List<Integer> nums) {
+        return nums.stream()
+                .filter(n-> n<13 || n>19)
+                .collect(Collectors.toList());
+    }
+
+
+    /*
+Given a list of strings, return a list of the strings, omitting any string length 3 or 4.
+
+
+no34(["a", "bb", "ccc"]) → ["a", "bb"]
+no34(["a", "bb", "ccc", "dddd"]) → ["a", "bb"]
+no34(["ccc", "dddd", "apple"]) → ["apple"]
+     */
+
+
+    public List<String> no34(List<String> strings) {
+        return strings.stream()
+                .filter(n->!(n.length()==3 || n.length()==4))
+                .collect(Collectors.toList());
+    }
 
 
 
