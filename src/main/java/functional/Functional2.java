@@ -75,4 +75,23 @@ noLong(["cccc", "cccc", "cccc"]) → []
     public List<String> noLong(List<String> strings) {
         return strings.stream().filter(n->n.length()<4).collect(Collectors.toList());
     }
+
+
+/*
+Given a list of non-negative integers, return a list of those numbers multiplied by 2,
+omitting any of the resulting numbers that end in 2.
+
+
+    two2([1, 2, 3]) → [4, 6]
+    two2([2, 6, 11]) → [4]
+    two2([0]) → [0]
+
+    */
+public List<Integer> two2(List<Integer> nums) {
+    return nums.stream().map(n->n*2).filter(n->!(n%10==2)).collect(Collectors.toList());
+}
+
+
+
+
 }
