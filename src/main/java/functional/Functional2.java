@@ -45,8 +45,22 @@ noYY(["xx", "ya", "zz"]) → ["xxy", "yay", "zzy"]
 
     public List<String> noYY(List<String> strings) {
         return strings.stream()
-                .map(n->n+"y")
-                .filter(n->!n.contains("yy"))
+                .map(n -> n + "y")
+                .filter(n -> !n.contains("yy"))
                 .collect(Collectors.toList());
     }
+
+    /*
+    Given a list of non-negative integers,
+    return a list of those numbers except omitting any that end with 9. (Note: % by 10)
+
+no9([1, 2, 19]) → [1, 2]
+no9([9, 19, 29, 3]) → [3]
+no9([1, 2, 3]) → [1, 2, 3]
+     */
+
+    public List<Integer> no9(List<Integer> nums) {
+        return nums.stream().filter(n -> !(n % 10 == 9)).collect(Collectors.toList());
+    }
+
 }
