@@ -78,8 +78,8 @@ repeatEnd("Hello", 1) → "o"
 
     public String repeatEnd(String str, int n) {
         String result = str.substring(str.length() - n);
-        for(int i=0;i<n; i++){
-            result+= str.substring(str.length() - n);
+        for (int i = 0; i < n; i++) {
+            result += str.substring(str.length() - n);
         }
         return result;
     }
@@ -99,8 +99,8 @@ prefixAgain("abXYabc", 3) → false
     public boolean prefixAgain(String str, int n) {
         String prefix = str.substring(0, n);
 
-        for(int i = n; i <= str.length() - n; i++) {
-            if(str.substring(i, i + n).equals(prefix))
+        for (int i = n; i <= str.length() - n; i++) {
+            if (str.substring(i, i + n).equals(prefix))
                 return true;
         }
         return false;
@@ -118,8 +118,8 @@ sameStarChar("*xa*az") → true
      */
 
     public boolean sameStarChar(String str) {
-        for(int i = 1; i < str.length() - 1; i++) {
-            if(str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1))
+        for (int i = 1; i < str.length() - 1; i++) {
+            if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1))
                 return false;
         }
 
@@ -139,4 +139,24 @@ starOut("sm*eilly") → "silly"
     public String starOut(String str) {
         String pattern = "([^*]{0,1})\\*+([^*]{0,1})";
         return str.replaceAll(pattern, "");
+    }
+
+/*
+Return the number of times that the string "hi" appears anywhere in the given string.
+
+
+countHi("abc hi ho") → 1
+countHi("ABChi hi") → 2
+countHi("hihi") → 2
+ */
+
+    public int countHi(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.substring(i, (i + 2)).equals("hi")) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
