@@ -181,4 +181,31 @@ endOther("abc", "abXabc") → true
         }
         return a.substring(a.length() - b.length()).equalsIgnoreCase(b);
     }
+
+    /*
+We'll say that a String is xy-balanced if for all the 'x' chars
+in the string, there exists a 'y' char somewhere later in the string.
+So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's.
+Return true if the given string is xy-balanced.
+
+xyBalance("aaxbby") → true
+xyBalance("aaxbb") → false
+xyBalance("yaaxbb") → false
+     */
+
+    public boolean xyBalance(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'x') {
+                if (
+                        str.substring(i + 1, str.length()).contains("y") &&
+                                str.charAt(str.length() - 1) != 'x') {
+                    return true;
+
+                }
+                return false;
+
+            }
+        }
+        return true;
+    }
 }
