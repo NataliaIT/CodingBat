@@ -203,7 +203,6 @@ xyBalance("yaaxbb") → false
 
                 }
                 return false;
-
             }
         }
         return true;
@@ -212,7 +211,9 @@ xyBalance("yaaxbb") → false
 
     /*
 
-Given a string and an int n, return a string made of the first n characters of the string, followed by the first n-1 characters of the string, and so on. You may assume that n is between 0 and the length of the string, inclusive (i.e. n >= 0 and n <= str.length()).
+Given a string and an int n, return a string made of the first n characters
+of the string, followed by the first n-1 characters of the string, and so on.
+You may assume that n is between 0 and the length of the string, inclusive (i.e. n >= 0 and n <= str.length()).
 
 
 repeatFront("Chocolate", 4) → "ChocChoChC"
@@ -231,3 +232,28 @@ repeatFront("Ice Cream", 2) → "IcI"
         }
         return result;
     }
+
+
+    /*
+
+Given a string, does "xyz" appear in the middle of the string?
+To define middle, we'll say that the number of chars to the left
+and right of the "xyz" must differ by at most one. This problem is harder than it looks.
+
+
+xyzMiddle("AAxyzBB") → true
+xyzMiddle("AxyzBB") → true
+xyzMiddle("AxyzBBB") → false
+     */
+    public boolean xyzMiddle(String str) {
+        int i = str.length()/2 -1;
+
+        if (str.length() >= 3 &&
+                (str.substring(i, i+3).equals("xyz") ||
+                        (str.length()%2 == 0 && str.substring(i-1, i+2).equals("xyz")))) {
+            return true;
+        }
+        return false;
+    }
+
+}
