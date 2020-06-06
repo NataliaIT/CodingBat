@@ -246,14 +246,55 @@ xyzMiddle("AxyzBB") → true
 xyzMiddle("AxyzBBB") → false
      */
     public boolean xyzMiddle(String str) {
-        int i = str.length()/2 -1;
+        int half = str.length() / 2;
 
-        if (str.length() >= 3 &&
-                (str.substring(i, i+3).equals("xyz") ||
-                        (str.length()%2 == 0 && str.substring(i-1, i+2).equals("xyz")))) {
+        if ((str.length() >= 3) &&
+                (str.substring(half - 1, half + 2).equals("xyz")
+                        || (str.length() % 2 == 0 && str.substring(half - 2, half + 1).equals("xyz")))) {
             return true;
         }
         return false;
     }
+
+
+    /*
+    Given a string, compute a new string by moving the first char
+    to come after the next two chars, so "abc" yields "bca".
+    Repeat this process for each subsequent group of 3 chars,
+    so "abcdef" yields "bcaefd".
+    Ignore any group of fewer than 3 chars at the end.
+
+
+oneTwo("abc") → "bca"
+oneTwo("tca") → "cat"
+oneTwo("tcagdo") → "catdog"
+     */
+
+    public String oneTwo(String str) {
+        String result = "";
+        if (str.length() > 2) {
+            for (int i = 0; i < str.length() - 2; i += 3) {
+                result = result + str.substring(i + 1, i + 3) + str.charAt(i);
+            }
+        }
+        return result;
+    }
+
+
+    /*
+Given a string and a non-empty word string,
+return a version of the original String where all chars have been replaced by pluses
+("+"), except for appearances of the word string which are preserved unchanged.
+
+
+plusOut("12xy34", "xy") → "++xy++"
+plusOut("12xy34", "1") → "1+++++"
+plusOut("12xy34xyabcxy", "xy") → "++xy++xy+++xy"
+     */
+
+    public String plusOut(String str, String word) {
+
+    }
+
 
 }
