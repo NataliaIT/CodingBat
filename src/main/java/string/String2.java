@@ -291,9 +291,19 @@ plusOut("12xy34", "xy") → "++xy++"
 plusOut("12xy34", "1") → "1+++++"
 plusOut("12xy34xyabcxy", "xy") → "++xy++xy+++xy"
      */
-
     public String plusOut(String str, String word) {
-
+        String result = "";
+        for (int i = 0; i < str.length(); ) {
+            if (i + word.length() <= str.length()
+                    && str.substring(i, i + word.length()).equals(word)) {
+                result += word;
+                i += word.length();
+            } else {
+                result += "+";
+                i++;
+            }
+        }
+        return result;
     }
 
 
