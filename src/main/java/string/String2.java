@@ -307,4 +307,29 @@ plusOut("12xy34xyabcxy", "xy") → "++xy++xy+++xy"
     }
 
 
+    /*
+    Return true if the string "cat" and "dog" appear the same number of times in the given string.
+
+
+catDog("catdog") → true
+catDog("catcat") → false
+catDog("1cat1cadodog") → true
+     */
+    public boolean catDog(String str) {
+        int countCat = 0;
+        int countDog = 0;
+
+        for (int i = 0; i < str.length() - 2; ) {
+            if (str.substring(i, i + 3).equals("cat")) {
+                countCat++;
+                i += 3;
+            } else if (str.substring(i, i + 3).equals("dog")) {
+                countDog++;
+                i += 3;
+            } else i++;
+        }
+
+        return countCat == countDog;
+    }
+
 }
