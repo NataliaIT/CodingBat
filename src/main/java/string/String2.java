@@ -333,7 +333,6 @@ catDog("1cat1cadodog") → true
     }
 
 
-
     /*
     Return true if the given string contains an appearance of "xyz"
     where the xyz is not directly preceeded by a period (.).
@@ -347,4 +346,29 @@ xyzThere("xyz.abc") → true
     public boolean xyzThere(String str) {
         return str.startsWith("xyz") || str.matches(".*[^.]xyz.*");
     }
+
+
+    /*
+Given two strings, a and b, create a bigger string made of the first char of a,
+the first char of b, the second char of a, the second char of b,
+and so on. Any leftover chars go at the end of the result.
+
+
+mixString("abc", "xyz") → "axbycz"
+mixString("Hi", "There") → "HTihere"
+mixString("xxxx", "There") → "xTxhxexre"
+     */
+
+
+    public String mixString(String a, String b) {
+        String shorter = a.length() < b.length() ? a : b;
+        String longer = a.length() > b.length() ? a : b;
+        String result = "";
+        for (int i = 0; i < shorter.length(); i++) {
+            result = result + a.charAt(i) + b.charAt(i);
+        }
+        result += longer.substring(shorter.length());
+        return result;
+    }
+
 }
