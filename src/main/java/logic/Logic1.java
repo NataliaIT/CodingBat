@@ -312,13 +312,11 @@ fizzString("fib") → "FizzBuzz"
      */
 
     public String fizzString(String str) {
-        if(str.startsWith("f") &&str.endsWith("b")){
+        if (str.startsWith("f") && str.endsWith("b")) {
             return "FizzBuzz";
-        }
-        else if (str.startsWith("f")){
+        } else if (str.startsWith("f")) {
             return "Fizz";
-        }
-        else if (str.endsWith("b")){
+        } else if (str.endsWith("b")) {
             return "Buzz";
         }
         return str;
@@ -337,7 +335,7 @@ inOrder(1, 1, 2, true) → true
 
     public boolean inOrder(int a, int b, int c, boolean bOk) {
 
-        return (!bOk && b>a && c>b) ||(bOk && c>b) ;
+        return (!bOk && b > a && c > b) || (bOk && c > b);
     }
 
 /*
@@ -350,9 +348,33 @@ lessBy10(11, 1, 7) → true
  */
 
     public boolean lessBy10(int a, int b, int c) {
-        return  Math.abs(a - b) >= 10 ||
+        return Math.abs(a - b) >= 10 ||
                 Math.abs(a - c) >= 10 ||
                 Math.abs(b - c) >= 10;
+    }
+
+    /*
+
+You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2.
+If they are all the value 2, the result is 10.
+Otherwise if they are all the same, the result is 5.
+Otherwise so long as both b and c are different from a, the result is 1.
+Otherwise the result is 0.
+
+
+redTicket(2, 2, 2) → 10
+redTicket(2, 2, 1) → 0
+redTicket(0, 0, 0) → 5
+     */
+    public int redTicket(int a, int b, int c) {
+        if (a == 2 && b == 2 && c == 2) {
+            return 10;
+        } else if (a == b && b == c) {
+            return 5;
+        } else if (a != b && c != a) {
+            return 1;
+        }
+        return 0;
     }
 
 }
