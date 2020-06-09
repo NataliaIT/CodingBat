@@ -274,10 +274,27 @@ old35(15) → false
      */
 
     public boolean old35(int n) {
-        if(n%3==0 && n%5==0){
+        if (n % 3 == 0 && n % 5 == 0) {
             return false;
         }
-        return n%3==0 || n%5==0;
+        return n % 3 == 0 || n % 5 == 0;
+    }
+
+    /*
+
+Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive,
+are extra lucky. So if either value is a teen, just return 19.
+
+
+teenSum(3, 4) → 7
+teenSum(10, 13) → 19
+teenSum(13, 2) → 19
+     */
+    public int teenSum(int a, int b) {
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) {
+            return 19;
+        }
+        return a + b;
     }
 
 }
