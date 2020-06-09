@@ -452,7 +452,7 @@ specialEleven(24) → false
      */
 
     public boolean specialEleven(int n) {
-        return n%11==0 || n%11==1;
+        return n % 11 == 0 || n % 11 == 1;
     }
 
     /*
@@ -481,10 +481,9 @@ answerCell(false, false, true) → false
 answerCell(true, false, false) → false
      */
     public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-        if (isAsleep){
+        if (isAsleep) {
             return false;
-        }
-        else if (isMom){
+        } else if (isMom) {
             return true;
         }
         return !isMorning;
@@ -507,16 +506,14 @@ fizzString2(3) → "Fizz!"
      */
 
     public String fizzString2(int n) {
-        if(n%3==0 && n%5==0){
+        if (n % 3 == 0 && n % 5 == 0) {
             return "FizzBuzz!";
-        }
-        else if (n%3==0){
+        } else if (n % 3 == 0) {
             return "Fizz!";
-        }
-        else if (n%5==0){
+        } else if (n % 5 == 0) {
             return "Buzz!";
         }
-        return n+"!";
+        return n + "!";
     }
 
 
@@ -534,7 +531,7 @@ inOrderEqual(5, 5, 7, true) → true
 
     public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
 
-        return (!equalOk &&a<b && b<c) ||(equalOk && a<=b && b<=c);
+        return (!equalOk && a < b && b < c) || (equalOk && a <= b && b <= c);
     }
 
     /*
@@ -550,21 +547,21 @@ withoutDoubles(3, 3, false) → 6
 
     public int withoutDoubles(int die1, int die2, boolean noDoubles) {
 
-        if(noDoubles){
-            if(die1==die2  && die1!=6){
-                return die1+die2+1;
-            }
-            else if (die1==die2  && die1==6){
+        if (noDoubles) {
+            if (die1 == die2 && die1 != 6) {
+                return die1 + die2 + 1;
+            } else if (die1 == die2 && die1 == 6) {
                 return 7;
             }
 
         }
-        return die1 +die2;
+        return die1 + die2;
     }
+
     public int withoutDoublesSecondSolution(int die1, int die2, boolean noDoubles) {
-        if(noDoubles && die1 == die2) {
+        if (noDoubles && die1 == die2) {
             die1++;
-            if(die1 == 7)
+            if (die1 == 7)
                 die1 = 1;
         }
 
@@ -585,12 +582,33 @@ greenTicket(1, 1, 2) → 10
      */
 
     public int greenTicket(int a, int b, int c) {
-        if (a==b && b==c){
+        if (a == b && b == c) {
             return 20;
-        }
-        else if (a==b ||b==c ||a==c){
+        } else if (a == b || b == c || a == c) {
             return 10;
         }
         return 0;
+    }
+
+    /*
+
+Given 2 non-negative ints, a and b, return their sum,
+so long as the sum has the same number of digits as a.
+If the sum has more digits than a, just return a without b.
+(Note: one way to compute the number of digits of a non-negative int n
+is to convert it to a string with String.valueOf(n) and then check the length of the string.)
+
+
+sumLimit(2, 3) → 5
+sumLimit(8, 3) → 8
+sumLimit(8, 1) → 9
+     */
+
+    public int sumLimit(int a, int b) {
+
+        if (String.valueOf(a + b).length() != String.valueOf(a).length())
+            return a;
+
+        return a + b;
     }
 }
