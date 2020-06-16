@@ -91,4 +91,24 @@ fizzArray(10) → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         return nums;
     }
 
+
+    /*
+
+Given an array of ints, return true if it contains no 1's or it contains no 4's.
+
+
+no14([1, 2, 3]) → true
+no14([1, 2, 3, 4]) → false
+no14([2, 3, 4]) → true
+     */
+
+    public boolean no14(int[] nums) {
+        boolean containsNo1=true, containsNo4=true;
+        for (int i : nums) {
+            if(i==1) containsNo1 = false;
+            if(i==4) containsNo4 = false;
+
+        }
+        return containsNo1 || containsNo4;
+    }
 }
