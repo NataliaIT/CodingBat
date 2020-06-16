@@ -12,9 +12,9 @@ countEvens([1, 3, 5]) → 0
      */
 
     public int countEvens(int[] nums) {
-        int count =0;
-        for(int n : nums){
-            if(n%2==0){
+        int count = 0;
+        for (int n : nums) {
+            if (n % 2 == 0) {
                 count++;
             }
         }
@@ -34,13 +34,12 @@ sum13([1, 2, 2, 1, 13]) → 6
      */
 
     public int sum13(int[] nums) {
-        int sum=0;
-        for(int i=0; i<nums.length;){
-            if(nums[i]==13){
-                i+=2;
-            }
-            else{
-                sum=sum+nums[i];
+        int sum = 0;
+        for (int i = 0; i < nums.length; ) {
+            if (nums[i] == 13) {
+                i += 2;
+            } else {
+                sum = sum + nums[i];
                 i++;
             }
         }
@@ -58,8 +57,8 @@ lucky13([1, 2, 4]) → false
      */
 
     public boolean lucky13(int[] nums) {
-        for(int n:nums){
-            if(n==1 || n==3)
+        for (int n : nums) {
+            if (n == 1 || n == 3)
                 return false;
         }
         return true;
@@ -85,8 +84,8 @@ fizzArray(10) → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     public int[] fizzArray(int n) {
         int nums[] = new int[n];
-        for(int i=0;i<nums.length;i++){
-            nums[i]=i;
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = i;
         }
         return nums;
     }
@@ -103,10 +102,10 @@ no14([2, 3, 4]) → true
      */
 
     public boolean no14(int[] nums) {
-        boolean containsNo1=true, containsNo4=true;
+        boolean containsNo1 = true, containsNo4 = true;
         for (int n : nums) {
-            if(n==1) containsNo1 = false;
-            if(n==4) containsNo4 = false;
+            if (n == 1) containsNo1 = false;
+            if (n == 4) containsNo4 = false;
 
         }
         return containsNo1 || containsNo4;
@@ -125,13 +124,36 @@ matchUp([1, 2, 3], [2, 3, 3]) → 2
      */
 
     public int matchUp(int[] nums1, int[] nums2) {
-        int count =0;
+        int count = 0;
 
-        for (int i=0;i<nums1.length;i++){
-            if(nums1[i]!=nums2[i] && Math.abs(nums1[i]-nums2[i])<3){
+        for (int i = 0; i < nums1.length; i++) {
+            if (nums1[i] != nums2[i] && Math.abs(nums1[i] - nums2[i]) < 3) {
                 count++;
             }
         }
         return count;
+    }
+
+
+    /*
+
+Given an array of ints, return true if the array contains either 3 even or 3 odd values all next to each other.
+
+
+modThree([2, 1, 3, 5]) → true
+modThree([2, 1, 2, 5]) → false
+modThree([2, 4, 2, 5]) → true
+     */
+
+
+    public boolean modThree(int[] nums) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] % 2 == 0 && nums[i + 1] % 2 == 0 && nums[i + 2] % 2 == 0) {
+                return true;
+            } else if (nums[i] % 2 != 0 && nums[i + 1] % 2 != 0 && nums[i + 2] % 2 != 0) {
+                return true;
+            }
+        }
+        return false;
     }
 }
