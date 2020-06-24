@@ -281,7 +281,7 @@ fizzBuzz(1, 11) → ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "B
         String[] arrayFizzBuzz = new String[end - start];
 
         for(int i = start; i < end; i++) {
-            if(i % 15 == 0) {
+            if(i % 3 == 0 && i % 5 == 0) {
                 arrayFizzBuzz[i - start] = "FizzBuzz";
             } else if(i % 3 == 0) {
                 arrayFizzBuzz[i - start] = "Fizz";
@@ -293,6 +293,30 @@ fizzBuzz(1, 11) → ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "B
         }
 
         return arrayFizzBuzz;
+    }
+
+    /*
+    Given an array length 1 or more of ints, return the difference between the largest
+    and smallest values in the array. Note: the built-in Math.min(v1, v2) and Math.max(v1, v2)
+    methods return the smaller or larger of two values.
+
+
+bigDiff([10, 3, 5, 6]) → 7
+bigDiff([7, 2, 10, 9]) → 8
+bigDiff([2, 10, 7, 2]) → 8
+     */
+
+    public int bigDiff(int[] nums) {
+        int min = nums[0];
+        int max = nums[0];
+
+        for(int i = 1; i < nums.length; i++) {
+            min = Math.min(min, nums[i]);
+            max = Math.max(max, nums[i]);
+        }
+
+        return max - min;
+
     }
 
 
