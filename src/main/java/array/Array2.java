@@ -368,4 +368,33 @@ sum28([1, 2, 3, 4]) → false
         return sum==8;
     }
 
+    /*
+    Given an array of ints, return true if every element is a 1 or a 4.
+
+
+only14([1, 4, 1, 4]) → true
+only14([1, 4, 2, 4]) → false
+only14([1, 1]) → true
+     */
+
+    public boolean only14(int[] nums) {
+        boolean only1or4 =false;
+
+        if(nums.length ==0){
+            return true;
+        }
+
+        for (int i =0; i<nums.length; i++){
+            if(nums[i]==1 || nums[i]==4){
+                only1or4=true;
+            }
+            else if(nums[i] !=1 || nums[i] != 4){
+                only1or4=false;
+                break;
+            }
+        }
+        return only1or4;
+    }
+
+
 }
